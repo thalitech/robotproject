@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-09-09T10:48:37.567724" rpa="false" schemaversion="5">
+<suite id="s1" name="HomeTestCases" source="C:\Users\thali\Documents\QA\RobotProject\tests\HomeTestCases.robot">
+<test id="s1-t1" name="Caso de Teste 01: Visualizar formulário" line="9">
+<kw name="Abrir navegador" owner="Resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-09T10:48:38.245911" level="INFO">Opening browser 'chrome' to base url 'alias:blank'.</msg>
+<msg time="2024-09-09T10:48:40.165921" level="WARN">The chromedriver version (127.0.6533.119) detected in PATH at C:\Users\thali\AppData\Local\Programs\Python\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (128.0.6613.120); currently, chromedriver 128.0.6613.119 is recommended for chrome 128.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>alias:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-09T10:48:38.244950" elapsed="3.878113"/>
+</kw>
+<status status="PASS" start="2024-09-09T10:48:38.242920" elapsed="3.881140"/>
+</kw>
+<kw name="Acessar a página home do site" owner="Home">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-09T10:48:42.126056" level="INFO">Opening url 'https://atelieafetivodaro.com/'</msg>
+<arg>${HOME_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-09T10:48:42.126056" elapsed="12.782569"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-09T10:48:54.917601" level="INFO">Page title is 'Ateliê Afetivo da Rô – Crochetaria e acessórios para você!'.</msg>
+<arg>${HOME_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-09-09T10:48:54.908625" elapsed="0.008976"/>
+</kw>
+<status status="PASS" start="2024-09-09T10:48:42.125058" elapsed="12.792543"/>
+</kw>
+<kw name="Acessar a página contato do site" owner="Home">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-09T10:48:54.920592" level="INFO">Clicking element 'xpath=//span[normalize-space()='Contato']'.</msg>
+<arg>${MAIN_MENU_CONTATO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-09T10:48:54.919595" elapsed="3.074779"/>
+</kw>
+<status status="PASS" start="2024-09-09T10:48:54.918598" elapsed="3.076470"/>
+</kw>
+<kw name="Visualizar campos do formulário de contato" owner="Contato">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HOME_FIELD_SEUNOME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-09T10:48:57.997366" elapsed="2.573531"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HOME_FIELD_EMAIL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-09T10:49:00.570897" elapsed="0.040887"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HOME_FIELD_ASSUNTO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-09T10:49:00.611784" elapsed="0.029920"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HOME_FIELD_MENSAGEM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-09T10:49:00.642702" elapsed="0.033909"/>
+</kw>
+<status status="PASS" start="2024-09-09T10:48:57.996490" elapsed="2.680121"/>
+</kw>
+<kw name="Preencher campos do formulário de contato" owner="Contato">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-09T10:49:00.679761" level="INFO">Typing text 'Thalita Bernardes' into text field 'name=your-name'.</msg>
+<arg>${HOME_FIELD_SEUNOME}</arg>
+<arg>Thalita Bernardes</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-09T10:49:00.679761" elapsed="0.226236"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2024-09-09T10:49:00.906995" level="INFO">${EMAIL} = u7tRT3ud</msg>
+<var>${EMAIL}</var>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-09-09T10:49:00.906995" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-09T10:49:00.907993" level="INFO">Typing text 'u7tRT3ud@testerobot.com' into text field 'name=your-email'.</msg>
+<arg>${HOME_FIELD_EMAIL}</arg>
+<arg>${EMAIL}@testerobot.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-09T10:49:00.907993" elapsed="0.192485"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-09T10:49:01.101475" level="INFO">Typing text 'Assunto de Teste' into text field 'name=your-subject'.</msg>
+<arg>${HOME_FIELD_ASSUNTO}</arg>
+<arg>Assunto de Teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-09T10:49:01.101475" elapsed="0.198469"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-09T10:49:01.301335" level="INFO">Typing text 'Mensagem de Teste!' into text field 'name=your-message'.</msg>
+<arg>${HOME_FIELD_MENSAGEM}</arg>
+<arg>Mensagem de Teste!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-09T10:49:01.299944" elapsed="0.177525"/>
+</kw>
+<status status="PASS" start="2024-09-09T10:49:00.678606" elapsed="0.799861"/>
+</kw>
+<kw name="Enviar formulário de contato" owner="Contato">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-09T10:49:01.480461" level="INFO">Clicking element 'xpath=//input[@value='Enviar']'.</msg>
+<arg>${HOME_BTN_ENVIAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-09T10:49:01.479465" elapsed="0.274266"/>
+</kw>
+<status status="PASS" start="2024-09-09T10:49:01.479465" elapsed="0.274266"/>
+</kw>
+<kw name="Fechar navegador" owner="Resource" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-09T10:49:02.856784" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-09T10:49:01.755727" elapsed="1.101057"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-09T10:49:02.857786" elapsed="2.885701"/>
+</kw>
+<status status="PASS" start="2024-09-09T10:49:01.754728" elapsed="3.989588"/>
+</kw>
+<status status="PASS" start="2024-09-09T10:48:38.240951" elapsed="27.504363"/>
+</test>
+<status status="PASS" start="2024-09-09T10:48:37.612604" elapsed="28.135702"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="HomeTestCases">HomeTestCases</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-09T10:48:37.556808" level="WARN">Error in file 'C:\Users\thali\Documents\QA\RobotProject\tests\HomeTestCases.robot' on line 8: Singular section headers like '*** Test Case ***' are deprecated. Use plural format like '*** Test Cases ***' instead.</msg>
+<msg time="2024-09-09T10:48:37.609675" level="ERROR">Processing variable file 'BROWSER' with arguments ['headlesschrome'] failed: Importing variable file 'BROWSER' failed: ModuleNotFoundError: No module named 'BROWSER'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\thali\AppData\Local\Programs\Python\Python312\Scripts\robot.exe
+  C:\Users\thali\AppData\Local\Programs\Python\Python312\python312.zip
+  C:\Users\thali\AppData\Local\Programs\Python\Python312\DLLs
+  C:\Users\thali\AppData\Local\Programs\Python\Python312\Lib
+  C:\Users\thali\AppData\Local\Programs\Python\Python312
+  C:\Users\thali\AppData\Local\Programs\Python\Python312\Lib\site-packages</msg>
+<msg time="2024-09-09T10:48:40.165921" level="WARN">The chromedriver version (127.0.6533.119) detected in PATH at C:\Users\thali\AppData\Local\Programs\Python\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (128.0.6613.120); currently, chromedriver 128.0.6613.119 is recommended for chrome 128.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
